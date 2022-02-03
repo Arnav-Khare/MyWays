@@ -1,0 +1,173 @@
+{
+    "services": [
+        { 
+            "id": 1,
+            "title": "I will landscape your garden", 
+            "thumbnailUrl": "http://localhost:9000/garden.jpg",
+            "rate": 34,
+            "rating": 4, 
+            "specialist": 
+            { "id": 1, "fullName": "Mark brone" }
+        }
+      ,
+      { 
+          "id": 2, 
+          "title": "I will paint your car from top to bottom", 
+          "thumbnailUrl": "http://localhost:9000/car.jpg", 
+          "rate": 50,
+          "rating": 3,
+           "specialist": { "id": 1, "fullName": "Mark brone" }
+      },
+      { 
+          "id": 3, 
+          "title": "I will Manage your team with strict plan", 
+          "thumbnailUrl": "http://localhost:9000/office.jpg",
+          "rate": 42,
+          "rating": 5,
+           "specialist": { "id": 1, "fullName": "Mark brone" }
+      },
+       { "id": 4, 
+         "title": "I will Make your palace garden", 
+         "thumbnailUrl": "http://localhost:9000/grass.jpg",
+         "rate": 50,
+         "rating": 5,
+          "specialist": { "id": 1, "fullName": "Mark brone" }
+      }
+      ,{
+        "id": 5, 
+        "title": "I will Manage your team with strict plan", 
+        "thumbnailUrl": "http://localhost:9000/office.jpg",
+        "rate": 42,
+        "rating": 5,
+        "specialist": { "id": 1, "fullName": "Mark brone" }
+      },
+      {
+        "id": 6, 
+        "title": "I will Manage your team with strict plan", 
+        "thumbnailUrl": "http://localhost:9000/office.jpg",
+        "rate": 42,
+        "rating": 5,
+        "specialist": { "id": 1, "fullName": "Mark brone" }
+      },
+      {
+        "id": 46, 
+        "title": "I will Manage your team with strict plan", 
+        "thumbnailUrl": "http://localhost:9000/office.jpg",
+        "rate": 42,
+        "rating": 5,
+        "specialist": { "id": 1, "fullName": "Mark brone" }
+      },
+      {
+        "id": 7, 
+        "title": "I will Manage your team with strict plan", 
+        "thumbnailUrl": "http://localhost:9000/office.jpg",
+        "rate": 42,
+        "rating": 5,
+        "specialist": { "id": 1, "fullName": "Mark brone" }
+      },
+      {
+        "id": 8, 
+        "title": "I will Manage your team with strict plan", 
+        "thumbnailUrl": "http://localhost:9000/office.jpg",
+        "rate": 42,
+        "rating": 5,
+        "specialist": { "id": 1, "fullName": "Mark brone" }
+      },
+      {
+        "id": 9, 
+        "title": "I will Manage your team with strict plan", 
+        "thumbnailUrl": "http://localhost:9000/office.jpg",
+        "rate": 42,
+        "rating": 5,
+        "specialist": { "id": 1, "fullName": "Mark brone" }
+      },
+      {
+        "id": 10, 
+        "title": "I will Manage your team with strict plan", 
+        "thumbnailUrl": "http://localhost:9000/office.jpg",
+        "rate": 42,
+        "rating": 5,
+        "specialist": { "id": 1, "fullName": "Mark brone" }
+      },
+      {
+        "id": 11, 
+        "title": "I will Manage your team with strict plan", 
+        "thumbnailUrl": "http://localhost:9000/office.jpg",
+        "rate": 42,
+        "rating": 5,
+        "specialist": { "id": 1, "fullName": "Mark brone" }
+      },
+      {
+        "id": 12, 
+        "title": "I will Manage your team with strict plan", 
+        "thumbnailUrl": "http://localhost:9000/office.jpg",
+        "rate": 42,
+        "rating": 5,
+        "specialist": { "id": 1, "fullName": "Mark brone" }
+      },
+      {
+        "id": 13, 
+        "title": "I will Manage your team with strict plan", 
+        "thumbnailUrl": "http://localhost:9000/office.jpg",
+        "rate": 42,
+        "rating": 5,
+        "specialist": { "id": 1, "fullName": "Mark brone" }
+      },
+      {
+        "id": 14, 
+        "title": "I will Manage your team with strict plan", 
+        "thumbnailUrl": "http://localhost:9000/office.jpg",
+        "rate": 42,
+        "rating": 5,
+        "specialist": { "id": 1, "fullName": "Mark brone" }
+      },
+      {
+        "id": 15, 
+        "title": "I will Manage your team with strict plan", 
+        "thumbnailUrl": "http://localhost:9000/office.jpg",
+        "rate": 42,
+        "rating": 5,
+        "specialist": { "id": 1, "fullName": "Mark brone" }
+      },
+      {
+        "id": 16, 
+        "title": "I will Manage your team with strict plan", 
+        "thumbnailUrl": "http://localhost:9000/office.jpg",
+        "rate": 42,
+        "rating": 5,
+        "specialist": { "id": 1, "fullName": "Mark brone" }
+      },
+      {
+        "id": 17, 
+        "title": "I will Manage your team with strict plan", 
+        "thumbnailUrl": "http://localhost:9000/office.jpg",
+        "rate": 42,
+        "rating": 5,
+        "specialist": { "id": 1, "fullName": "Mark brone" }
+      },
+      {
+        "id": 18, 
+        "title": "I will Manage your team with strict plan", 
+        "thumbnailUrl": "http://localhost:9000/office.jpg",
+        "rate": 42,
+        "rating": 5,
+        "specialist": { "id": 1, "fullName": "Mark brone" }
+      },
+      {
+        "id": 19, 
+        "title": "I will Manage your team with strict plan", 
+        "thumbnailUrl": "http://localhost:9000/office.jpg",
+        "rate": 42,
+        "rating": 5,
+        "specialist": { "id": 1, "fullName": "Mark brone" }
+      },
+      {
+        "id": 20, 
+        "title": "I will Manage your team with strict plan", 
+        "thumbnailUrl": "http://localhost:9000/office.jpg",
+        "rate": 42,
+        "rating": 5,
+        "specialist": { "id": 1, "fullName": "Mark brone" }
+      }
+    ]
+  }
