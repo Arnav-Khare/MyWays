@@ -125,10 +125,12 @@ function MyVerticallyCenteredModal(props) {
           <Marginer direction="vertical" margin={20}></Marginer>
           <Line>OR</Line>
           <Marginer direction="vertical" margin={20}></Marginer>
+          <form action="http://localhost:6001/login" method="POST">
           <InputForm
           type="text" 
           value={email}
           placeholder="Email"
+          name="email"
           onChange={(e) =>setEmail(e.target.value)}
         />
         <Marginer direction="vertical" margin={20}></Marginer>
@@ -136,14 +138,16 @@ function MyVerticallyCenteredModal(props) {
           type="password" 
           placeholder="Password"
           value={password}
+          name="password"
           onChange={(e) =>setPassword(e.target.value)}
         />
         <Marginer direction="vertical" margin={20}></Marginer>
         <Center>
-            <Button width={80} center={true} onClick={()=>{alert('hello')}}>
+            <Button width={80} center={true} onClick={()=>{}}>
                 Login
             </Button>
         </Center>
+          </form>
         <Marginer direction="vertical" margin={20}></Marginer>
         <Center>
             Forgot your Password?
@@ -156,8 +160,106 @@ function MyVerticallyCenteredModal(props) {
       </Modal>
     );
   }
+
+  function MyVerticallyCenteredModalRegister(props) {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phonenumber, setPhoneNumber] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [campusId, setCampusId] = useState("");
+    return (
+      <Modal
+        {...props}
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header>
+          <Modal.Title id="contained-modal-title-vcenter" >
+            Candidate
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Line>Login With</Line>
+          <Marginer direction="vertical" margin={10}></Marginer>
+          <ImageContainer>
+                <Border>
+                    <img src={GoogleImage}/>
+               </Border>
+               <Border>
+                    <img src={facebookImage}/>
+               </Border>
+          </ImageContainer>
+          <Marginer direction="vertical" margin={20}></Marginer>
+          <Line>OR</Line>
+          <Marginer direction="vertical" margin={20}></Marginer>
+          <form action="http://localhost:6001/register" method="POST">
+          <InputForm
+          type="text" 
+          value={name}
+          placeholder="FullName"
+          name="fullname"
+          onChange={(e) =>setName(e.target.value)}
+        />
+        <Marginer direction="vertical" margin={10}></Marginer>
+         <InputForm
+          type="text" 
+          placeholder="Email"
+          value={email}
+          name="email"
+          onChange={(e) =>setEmail(e.target.value)}
+        />
+        <Marginer direction="vertical" margin={10}></Marginer>
+         <InputForm
+          type="numbr" 
+          placeholder="PhoneNumber"
+          value={phonenumber}
+          name="phonenumber"
+          onChange={(e) =>setPhoneNumber(e.target.value)}
+        />
+        <Marginer direction="vertical" margin={10}></Marginer>
+         <InputForm
+          type="password" 
+          placeholder="Password"
+          value={password}
+          name="password"
+          onChange={(e) =>setPassword(e.target.value)}
+        />
+        <Marginer direction="vertical" margin={10}></Marginer>
+         <InputForm
+          type="password" 
+          placeholder="Confirm Password"
+          value={confirmPassword}
+          name="confirmPassword"
+          onChange={(e) =>setConfirmPassword(e.target.value)}
+        />
+        <Marginer direction="vertical" margin={10}></Marginer>
+         <InputForm
+          type="text" 
+          placeholder="Campus ID (Optional)"
+          value={campusId}
+          name="campusId"
+          onChange={(e) =>setCampusId(e.target.value)}
+        />
+        <Marginer direction="vertical" margin={20}></Marginer>
+        <Center>
+            <Button width={80} center={true} onClick={()=>{}}>
+                Register As Candidate
+            </Button>
+        </Center>
+          </form>
+        <Marginer direction="vertical" margin={20}></Marginer>
+        </Modal.Body>
+        <Modal.Footer>
+           
+          <Button onClick={props.onHide}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
 export function Navbar(props){
     const [modalShow, setModalShow] = React.useState(false);
+    const [modalRegisterShow, setModalRegisterShow] = React.useState(false);
     
     return (
     <>
@@ -185,7 +287,7 @@ export function Navbar(props){
                  <Marginer direction="horizontal" margin={20}></Marginer>
                  <Button outline={true} onClick={() => setModalShow(true)} >LOG IN</Button>
                  <Marginer direction="horizontal" margin={20}></Marginer>
-                 <Button outline={false}>REGISTER</Button>
+                 <Button outline={false} onClick={() => setModalRegisterShow(true)}>REGISTER</Button>
 
 
              </AccessibilityContainer>
@@ -193,6 +295,10 @@ export function Navbar(props){
         <MyVerticallyCenteredModal
              show={modalShow}
              onHide={() => setModalShow(false)}
+        />
+         <MyVerticallyCenteredModalRegister
+             show={modalRegisterShow}
+             onHide={() => setModalRegisterShow(false)}
         />
             </>
         )
