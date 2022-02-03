@@ -2,8 +2,9 @@
     "services": [
         { 
             "id": 1,
-            "title": "I will landscape your garden", 
+            "title": "Must Learn Web Development frameworks in 2022", 
             "thumbnailUrl": "http://localhost:9000/garden.jpg",
+            "Description" : "The blog lists down some of the most popular web frameworks that should be on a new-age web develope...",
             "rate": 34,
             "rating": 4, 
             "specialist": 

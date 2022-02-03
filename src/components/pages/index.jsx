@@ -1,9 +1,10 @@
 import React,{useState,useEffect} from "react";
 import styled from "styled-components";
 import axios from 'axios';
-import { Cards } from "../cards";
 import  Pagination  from "../pagination";
 import Posts from "../posts";
+import { Marginer } from "../marginer";
+
 const PageContainer = styled.div`
 
     width:100%;
@@ -16,7 +17,7 @@ export function Pages (){
     const [posts,setPosts] = useState([]);
     const [loading,setLoading] = useState(false);
     const [currentPage,setCurrentPage] = useState(1);
-    const [postsperPage] = useState(8);
+    const [postsperPage] = useState(9);
 
     useEffect(()=>{
         const fetchPosts = async()=>{
@@ -46,6 +47,12 @@ export function Pages (){
         flex-direction:flex-end;
         justify-content:flex-end;
     `
+    const PostContainer = styled.div`
+        
+        margin:0 auto;
+        margin-top:40px;
+        width:90%;
+    `;
     return(
         <BlogContainer>
               <PageNumberConatiner>
@@ -54,9 +61,10 @@ export function Pages (){
                                    paginate={paginate}
                        />
               </PageNumberConatiner>
-            <div className='container mt-5'>
-            <Posts posts={currentPosts} loading={loading} />
-            </div>
+              <Marginer direction={"vertical"} margin={140}/>
+              <PostContainer>
+                     <Posts posts={currentPosts} loading={loading} />
+              </PostContainer>
         </BlogContainer>
     )
 

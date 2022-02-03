@@ -28,8 +28,7 @@ export function HomePage(props){
             <ContentContainer>
                 <Marginer direction={"vertical"} margin={40}/>
                 <Title>MyWays Blogs</Title>
-                <Marginer direction={"vertical"} margin={40}/>
-                <Pages></Pages>
+                <Pages/>
             </ContentContainer>
         </InnerPageContainer>
     </PageContainer>
