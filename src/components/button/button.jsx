@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 
 const ButtonWrapper = styled.button`
-
+    width: ${({ width }) => typeof width === "string" ? width : `${width}%`};
     border: none;
     outline: none;
     color: ${({outline}) => outline ? `#3E5B60` : `#fff`};
@@ -25,6 +25,5 @@ const ButtonWrapper = styled.button`
 
 `;
 export function Button(props){
-
        return <ButtonWrapper {...props}/>
 }
