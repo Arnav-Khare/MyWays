@@ -5,7 +5,9 @@ import { Navbar } from "../../components/navbar";
 import styled from "styled-components";
 import {deviceSize} from "../../components/responsive"
 import { Marginer } from "../../components/marginer";
-import { Pages } from "../../components/pages";
+import {BlogPost} from "../../components/blogPost"
+import { useLocation } from "react-router-dom"
+
 
 const Title = styled.h1`
 
@@ -19,21 +21,22 @@ const ContentContainer = styled.div`
   display:flex;
   flex-direction:column;
 `;
-export function HomePage(props){
-    return (
-        <div>
-            <PageContainer>
+
+export function User (){
+    const location = useLocation();
+    console.log(location.state._id);
+    localStorage.setItem("id",location.state._id);
+    const name = location.state.fullName
+    return <PageContainer>
         <TopSection>
             <Navbar/>
         </TopSection>
         <InnerPageContainer>
             <ContentContainer>
                 <Marginer direction={"vertical"} margin={40}/>
-                <Title>MyWays Blogs</Title>
-                <Pages/>
+                <Title>{name}'s Blogs</Title>
+                <BlogPost data={location.state}/>
             </ContentContainer>
         </InnerPageContainer>
     </PageContainer>
-        </div>
-    )
 }

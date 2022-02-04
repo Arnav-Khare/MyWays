@@ -22,8 +22,9 @@ export function Pages (){
     useEffect(()=>{
         const fetchPosts = async()=>{
             setLoading(true);
-            const res = await axios.get('http://localhost:9000/services');
-            setPosts(res.data);
+            console.log('qq')
+            const res = await axios.get('http://localhost:6001/getAllBlogs');
+            setPosts(res.data.reverse());
             setLoading(false);
         }
         fetchPosts();

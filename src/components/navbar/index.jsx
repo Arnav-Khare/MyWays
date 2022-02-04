@@ -8,6 +8,8 @@ import { Modal } from 'react-bootstrap';
 
 import GoogleImage from "../../images/logos/google.png"
 import facebookImage from "../../images/logos/linkdin.png"
+import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 const NavbarConatiner = styled.div`
     width:100%;
@@ -100,6 +102,28 @@ const Center = styled.div`
 function MyVerticallyCenteredModal(props) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [errorMessage,setErrorMessage] = useState("")
+    let navigate = useNavigate()
+    const handleSubmit = async() => {
+     
+      if (email === "" || password === "") {
+        setErrorMessage('Empty username/password field')
+      } else{
+        const loginDetails = {
+          email,
+          password
+        }
+        axios.post('http://localhost:6001/login',loginDetails).then((response) => {
+          if(response.status === 200){
+            localStorage.setItem("isAuthenticated", "true");
+            navigate('user',{ state: response.data})
+          }
+        }, (error) => {
+          setErrorMessage('Invalid Login Details')
+        });
+        
+      }
+    };
     return (
       <Modal
         {...props}
@@ -125,7 +149,6 @@ function MyVerticallyCenteredModal(props) {
           <Marginer direction="vertical" margin={20}></Marginer>
           <Line>OR</Line>
           <Marginer direction="vertical" margin={20}></Marginer>
-          <form action="http://localhost:6001/login" method="POST">
           <InputForm
           type="text" 
           value={email}
@@ -143,11 +166,15 @@ function MyVerticallyCenteredModal(props) {
         />
         <Marginer direction="vertical" margin={20}></Marginer>
         <Center>
-            <Button width={80} center={true} onClick={()=>{}}>
+        {errorMessage && (
+          <p className="text-danger"> {errorMessage} </p>
+        )}
+        </Center>
+        <Center>
+            <Button width={80} center={true} onClick={handleSubmit}>
                 Login
             </Button>
         </Center>
-          </form>
         <Marginer direction="vertical" margin={20}></Marginer>
         <Center>
             Forgot your Password?
@@ -168,6 +195,34 @@ function MyVerticallyCenteredModal(props) {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [campusId, setCampusId] = useState("");
+    const [errorMessage,setErrorMessage] = useState("")
+    let navigate = useNavigate()
+    const handleSubmit = async(e) => {
+     e.preventDefault();
+      if (email === "" || password === "" || name ===" " || phonenumber === " " || confirmPassword === " ") {
+        setErrorMessage('Please Enter the Required Field')
+      } else if(confirmPassword != password){
+        setErrorMessage("Password MisMatch...!")
+      }
+      else{
+        const userDetails = {
+          name,
+          email,
+          password,
+          phonenumber,
+          campusId,
+        }
+        axios.post('http://localhost:6001/register',userDetails).then((response) => {
+          if(response.status === 200){
+            localStorage.setItem("isAuthenticated", "true");
+            navigate('user',{ state: response.data})
+          }
+        }, (error) => {
+          setErrorMessage('Invalid Login Details')
+        });
+        
+      }
+    }
     return (
       <Modal
         {...props}
@@ -193,7 +248,6 @@ function MyVerticallyCenteredModal(props) {
           <Marginer direction="vertical" margin={20}></Marginer>
           <Line>OR</Line>
           <Marginer direction="vertical" margin={20}></Marginer>
-          <form action="http://localhost:6001/register" method="POST">
           <InputForm
           type="text" 
           value={name}
@@ -241,13 +295,18 @@ function MyVerticallyCenteredModal(props) {
           name="campusId"
           onChange={(e) =>setCampusId(e.target.value)}
         />
+          <Center>
+        {errorMessage && (
+          <p className="text-danger"> {errorMessage} </p>
+        )}
+        </Center>
         <Marginer direction="vertical" margin={20}></Marginer>
         <Center>
-            <Button width={80} center={true} onClick={()=>{}}>
+            <Button width={80} center={true} onClick={(e)=>{handleSubmit(e)}}>
                 Register As Candidate
             </Button>
         </Center>
-          </form>
+
         <Marginer direction="vertical" margin={20}></Marginer>
         </Modal.Body>
         <Modal.Footer>
@@ -260,7 +319,7 @@ function MyVerticallyCenteredModal(props) {
 export function Navbar(props){
     const [modalShow, setModalShow] = React.useState(false);
     const [modalRegisterShow, setModalRegisterShow] = React.useState(false);
-    
+    const isAuthenticated = localStorage.getItem('id');
     return (
     <>
         <NavbarConatiner>
